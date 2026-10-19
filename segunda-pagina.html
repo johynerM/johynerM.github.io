@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LaCueva: consolas disponibles, tarifas por hora, formulario de reservas y redes sociales de nuestra sala de videojuegos en Floridablanca.">
+  <title> La Cueva | Consolas y Reservas </title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <header class="cabecera">
+    <h1 class="cabecera__titulo"> 🌝 Bienvenidos a la <em>LaCueva</em> 🌚</h1> <!-- Comparte el mismo header, nav y pie de pagina que index.html -->
+  </header>
+  <nav class="menu">
+    <h2 class="menu__titulo"> Menú de opciones </h2>
+    <ul class="menu__lista">
+      <li class="menu__item"><a class="menu__enlace" href="index.html#ubicacion"> Donde estamos </a></li>
+      <li class="menu__item"><a class="menu__enlace" href="index.html#horario"> Horario de atencion </a></li>
+      <li class="menu__item"><a class="menu__enlace" href="segunda-pagina.html#consolas"> Que consolas tenemos </a></li>
+      <li class="menu__item"><a class="menu__enlace" href="index.html#juegos"> Juegos disponibles </a></li>
+      <li class="menu__item"><a class="menu__enlace" href="index.html#opiniones"> Opiniones de nuestros clientes </a></li>
+      <li class="menu__item"><a class="menu__enlace" href="segunda-pagina.html#contactos"> Contactanos </a></li>
+      <li class="menu__item"><a class="menu__enlace" href="segunda-pagina.html#reserva"> Reserva tu hora feliz </a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="consolas" class="consolas"> <!-- primer ancla de segunda-pagina.html, los tipos de consolas que ofrecen en el local -->
+      <h2 class="seccion__titulo"> Consolas </h2>
+      <p class="seccion__intro"> 🧀 pss pss pss aquí te tengo lo que buscas pequeñin no mires a otro lado aqui tienes lo que necesitas 😉</p>
+      <div class="galeria"> <!-- las mismas tarjetas que se usan con los juegos las tenemos con las consolas -->
+        <article class="tarjeta">
+          <input type="checkbox" id="interruptor" class="tarjeta__activador">
+          <label for="interruptor" class="tarjeta__imagen">
+            <img src="images/dueg-oth-playstation-7846347.svg" alt="Consola PlayStation 5 con su mando">
+            <span class="tarjeta__ayuda">Haz clic para ver mas opciones</span>
+          </label>
+          <div class="tarjeta__datos">
+            <h3>PlayStation 5</h3>
+            <ul>
+              <li>Resolucion 4K 120FPS</li>
+              <li>2 Mandos inalambricos</li>
+              <li>Precio por hora 5 mil COP</li>
+              <li>Cantidad de 4</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta">
+          <input type="checkbox" id="interruptor-2" class="tarjeta__activador">
+          <label for="interruptor-2" class="tarjeta__imagen">
+            <img src="images/thor_deichmann-xbox-4965065.jpg" alt="Consola Xbox con su mando">
+            <span class="tarjeta__ayuda">Haz clic para ver mas opciones</span>
+          </label>
+          <div class="tarjeta__datos">
+            <h3> Xbox series X/One/360</h3>
+            <ul>
+              <li>Series X: 4K 120FPS</li>
+              <li>One y 360: Full HD 60FPS</li>
+              <li>2 Mandos inalambricos</li>
+              <li>Precio por hora 4 mil COP</li>
+              <li>Cantidad de 6</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta">
+          <input type="checkbox" id="interruptor-3" class="tarjeta__activador">
+          <label for="interruptor-3" class="tarjeta__imagen">
+            <img src="images/nablagrange-nintendo-switch-6694997.svg" alt="Consola Nintendo Switch con sus controles">
+            <span class="tarjeta__ayuda">Haz clic para ver mas opciones</span>
+          </label>
+          <div class="tarjeta__datos">
+            <h3> Nintendo</h3>
+            <ul>
+              <li>Resolucion HD 60FPS</li>
+              <li>Precio por hora 6 mil COP</li>
+              <li>Cantidad de 2 consolas</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="tabla-caja">  <!-- se crea una tabla con los precios de cada consola por hora y cuantas unidades hay de la misma -->
+        <table class="tabla">
+          <caption> Tarifas por hora en <abbr title="Pesos colombianos">COP</abbr> </caption>
+          <thead>
+            <tr>
+              <th> Consola </th>
+              <th> Modelo </th>
+              <th> Precio por hora </th>
+              <th> Cantidad </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> PlayStation </td>
+              <td> PS5 </td>
+              <td> <s>6 mil</s> <strong>5 mil</strong><sup>1</sup> </td>
+              <td> 4 </td>
+            </tr>
+            <tr>
+              <td rowspan="3"> Xbox </td>
+              <td> Series X </td>
+              <td> 4 mil </td>
+              <td> 2 </td>
+            </tr>
+            <tr>
+              <td> One </td>
+              <td> 4 mil </td>
+              <td> 2 </td>
+            </tr>
+            <tr>
+              <td> 360 </td>
+              <td> 4 mil </td>
+              <td> 2 </td>
+            </tr>
+            <tr>
+              <td> Nintendo </td>
+              <td> Switch </td>
+              <td> 6 mil </td>
+              <td> 2 </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4"> <sup>1</sup> Precio de la hora feliz, de lunes a viernes </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section id="reserva" class="reserva"> <!-- 2da ancla de segunda-pagina.html, el formulario de las reservas -->
+      <h2 class="seccion__titulo seccion__titulo--centro"> Aparta tu tiempo y tu consola favorita 😝 </h2>
+      <p> Asi reservas en 3 pasos: </p>
+      <ol class="reserva__pasos">
+        <li> Llena el formulario con tus datos y la consola que quieres </li>
+        <li> Te escribimos por <strong>WhatsApp</strong> para confirmar </li>
+        <li> Llega a la hora acordada y ¡a jugar! </li>
+      </ol>
+      <p> Tomate unos segundos para llenar el formulario de reserva :D </p>
+      <form action="#" method="post" class="reserva__form"> <!-- ponemos solo el # en el action ya que no mandamos esa informacino por ahora a ningun lado -->
+        <div class="reserva__campo">
+          <label for="nombre"> Ingresa tu nombre aqui: </label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej Pablito Clavitos" required>
+        </div>
+        <div class="reserva__campo">
+          <label for="wasap"> Coloca un numero para informarte de todo: </label>
+          <input type="tel" id="wasap" name="whatsapp" placeholder="313 6767676" required>
+        </div>
+        <div class="reserva__campo">
+          <label for="fecha"> ¿Qué día nos acompañarás?</label>
+          <input type="date" id="fecha" name="fecha" required>
+        </div>
+        <div class="reserva__campo">
+          <label for="hora-llegada"> ¿A que hora llegas 😁?</label>
+          <input type="time" id="hora-llegada" name="hora-llegada" required>
+        </div>
+        <div class="reserva__campo">
+          <label for="hora-salida"> ¿A que hora nos dejas 😢?</label>
+          <input type="time" id="hora-salida" name="hora-salida" required>
+        </div>
+        <div class="reserva__campo">
+          <label for="consola-reserva"> ¿Que consola deseas usar?</label>
+          <select id="consola-reserva" name="consola-reserva" required>
+            <option value="" disabled selected> -- Elige una Consola -- </option>
+            <option value="Ps5"> Ps5 </option>
+            <option value="Xbox"> Xbox series x </option>
+            <option value="X-one"> Xbox series one </option>
+            <option value="X-360"> Xbox series 360 </option>
+            <option value="Nintendo"> Nintendo Switch </option>
+          </select>
+        </div>
+        <div class="reserva__campo">
+          <label for="comentarios"> ¿Algo mas que quieras contarnos? </label>
+          <textarea id="comentarios" name="comentarios" rows="4" placeholder="Ej: quiero jugar GTA SIX con 3 amigos"></textarea>
+        </div>
+        <button type="submit" class="reserva__boton"> Enviar Reserva </button>
+      </form>
+    </section>
+
+    <section id="contactos" class="redes"> <!-- ultima ancla de segunda-pagina.html, los contactos de redes sociales del local -->
+      <h2 class="seccion__titulo seccion__titulo--centro"> Contactanos </h2>
+      <p class="seccion__intro"> ¿Quieres estar pendiente de lo que hagamos? pues esta sección es para ti 😉</p>
+      <p> Se parte de nuestra familia todos son bienvenidos a <em>LaCueva</em> </p>
+      <div class="redes__lista">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="cofre cofre--ig">
+          <span class="cofre__icono">📷</span>
+          <h3 class="cofre__titulo">Instagram</h3>
+          <p class="cofre__descripcion">@LaCuevaGaming</p>
+          <span class="cofre__texto">¡Entra y descubre todo!</span>
+        </a>
+        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="cofre cofre--ws">
+          <span class="cofre__icono">💬🟩</span>
+          <h3 class="cofre__titulo">WhatsApp Business</h3>
+          <p class="cofre__descripcion"> Reserva tu consola o averigua lo que necesites </p>
+          <span class="cofre__texto">¡Pregunta sin miedo!</span>
+        </a>
+        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="cofre cofre--ds">
+          <span class="cofre__icono">🕹</span>
+          <h3 class="cofre__titulo">Discord</h3>
+          <p class="cofre__descripcion">la comunidad de la cueva</p>
+          <span class="cofre__texto">¡conocete con los demas miembros y enterate de eventos!</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="pie">
+    <p> En LaCueva tenemos espacio para todos los <em>chill boys/girls</em> reserva tu lugar en la madriguera</p>
+  </footer>
+</body>
+</html>

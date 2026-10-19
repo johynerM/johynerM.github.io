@@ -1,0 +1,505 @@
+/* asignacion de variables */
+:root{
+    /* colores */
+    --color-texto: #f0f0f0;
+    --color-fondo: #333;
+    --color-dorado: #ffd700;
+    --color-dorado-oscuro: #dfba18;
+    --color-naranja: #ffaa00;
+    --color-verde: #50f563;
+    --color-rojo: red;
+    --color-azul: #3498db;
+    --color-menu: #f5d20d;
+    --color-gris: #ccc;
+    /* colores con transparencia */
+    --fondo-tarjeta: rgba(14, 14, 54, 0.8);
+    --fondo-tarjeta-hover: rgba(26, 26, 80, 0.95);
+    --fondo-cafe: rgba(139, 69, 19, 0.7);
+    --fondo-cafe-oscuro: rgba(90, 45, 12, 0.85);
+    --fondo-morado: rgba(114, 82, 141, 0.6);
+    --fondo-resena: rgba(72, 100, 107, 0.7);
+    --borde-resena: rgba(182, 120, 5, 0.7);
+    --fondo-input: rgba(51, 50, 50, 0.6);
+    --borde-input: rgba(255, 215, 0, 0.4);
+    --brillo-dorado: rgba(255, 215, 0, 0.4);
+    /* tipografia */
+    --fuente-principal: "Trebuchet MS", Verdana, sans-serif;
+    /* espaciados */
+    --espacio-s: 0.625rem;
+    --espacio-m: 1.25rem;
+    --espacio-l: 2rem;
+    --radio: 20px;
+}
+
+/* Base  */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(../images/allinonemovie-minecraft-1106262_1920.png);
+    background-repeat: no-repeat;
+    background-color: var(--color-fondo);
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--color-texto);
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+:focus-visible{
+    outline: 3px solid var(--color-verde);
+    outline-offset: 3px;
+}
+
+/* Header y movimientos*/
+.cabecera__titulo{
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: capitalize;
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
+    background-size: 400% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: arcoiris 6s linear infinite;
+}
+@keyframes arcoiris{
+    0%{
+        background-position: 0% center;
+    }
+    100%{
+        background-position: 200% center;
+    }
+}
+
+/* menu */
+.menu{
+    font-size: 1.5rem;
+}
+.menu__titulo{
+    color: var(--color-dorado-oscuro);
+}
+.menu__lista{
+    list-style: none;
+    padding-left: var(--espacio-l);
+}
+.menu__item{
+    background-color: var(--fondo-tarjeta);
+    padding: 12px 16px;
+    margin-bottom: var(--espacio-s);
+    margin-right: var(--espacio-l);
+    border-radius: 8px;
+    border-left: 4px solid var(--color-azul);
+    transition: transform 0.2s;
+}
+/* Efecto al pasar el mouse por encima */
+.menu__item:hover{
+    transform: translateX(5px);
+    background-color: var(--fondo-tarjeta-hover);
+}
+.menu__enlace{
+    color: var(--color-menu);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.menu__enlace::before{
+    content: "▸ ";
+}
+.menu__enlace:hover{
+    color: var(--color-dorado);
+    text-decoration: underline;
+}
+
+/* titulos y textos */
+h3{
+    font-size: 1.7em;
+    color: var(--color-dorado-oscuro);
+}
+.seccion__titulo{
+    color: var(--color-verde);
+    font-size: 2.5rem;
+    text-align: left;
+}
+/* misma especificidad que .seccion__titulo: gana por ir despues */
+.seccion__titulo--dorado{
+    color: var(--color-dorado);
+}
+.seccion__titulo--centro{
+    text-align: center;
+}
+.seccion__intro{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+/* parte de la Ubi en el mapa*/
+.mapa{
+    border: 3px solid var(--color-dorado);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: var(--espacio-l);
+}
+.mapa__iframe{
+    display: block;
+    width: 100%;
+}
+
+/* configs de las tablas */
+.horario, .consolas{
+    font-size: 1.5rem;
+}
+.tabla-caja{
+    overflow-x: auto;
+    margin: var(--espacio-m) 0;
+}
+.tabla{
+    margin: auto;
+    width: 90%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 4px solid var(--color-rojo);
+    border-radius: var(--radio);
+}
+.tabla th, .tabla td{
+    background-color: var(--fondo-cafe);
+    color: #ffffff;
+    padding: var(--espacio-s);
+    border-right: 3.5px solid var(--color-rojo);
+    border-bottom: 3.5px solid var(--color-rojo);
+}
+/* filas pares de la tabla: mas oscuras */
+.tabla tbody tr:nth-child(even) td{
+    background-color: var(--fondo-cafe-oscuro);
+}
+.tabla__encabezado{
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 4px;
+    font-size: 2.5rem;
+}
+.tabla__dias{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.9rem;
+}
+.tabla caption{
+    color: var(--color-dorado);
+    padding-bottom: var(--espacio-s);
+}
+
+/* listas y el aside*/
+.recomendaciones__lista{
+    list-style-type: square;
+    font-size: 1.3rem;
+}
+.reserva__pasos{
+    list-style-type: decimal;
+}
+.recomendaciones__lista li::marker,
+.reserva__pasos li::marker{
+    color: var(--color-dorado);
+    font-weight: bold;
+}
+.recomendaciones__enlace{
+    color: var(--color-menu);
+}
+.aviso{
+    background-color: var(--fondo-tarjeta);
+    border-left: 6px solid var(--color-naranja);
+    border-radius: 8px;
+    padding: var(--espacio-s) var(--espacio-m);
+    margin: var(--espacio-m) 0;
+    font-size: 1.2rem;
+}
+
+/* tarjetas desplegables */
+.galeria{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
+    justify-content: center;
+}
+.tarjeta{
+    position: relative;
+    border: 2px solid var(--color-dorado);
+    border-radius: var(--radio);
+    padding: 15px;
+    max-width: 400px;
+    margin: 20px 0;
+    background-color: var(--fondo-tarjeta);
+    flex: 1 1 280px;
+    text-align: center;
+}
+/* el checkbox se oculta a la vista pero sigue entrando con TAB */
+.tarjeta__activador{
+    position: absolute;
+    opacity: 0;
+}
+.tarjeta__activador:focus-visible + .tarjeta__imagen{
+    outline: 3px solid var(--color-verde);
+    outline-offset: 4px;
+}
+.tarjeta__imagen{
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+.tarjeta__imagen img{
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    max-width: 80%;
+    margin: 0 auto;
+    height: auto;
+}
+.tarjeta__imagen img:hover{
+    transform: scale(1.1);
+}
+.tarjeta__ayuda{
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.tarjeta__datos{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    text-align: left;
+    border-top: 1px solid transparent;
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+.tarjeta__activador:checked ~ .tarjeta__datos{
+    max-height: 20rem;
+    opacity: 1;
+    margin-top: 15px;
+    border-top: 1px dashed var(--color-dorado);
+    padding-top: 10px;
+}
+.tarjeta__datos h3{
+    color: var(--color-naranja);
+    margin-bottom: 5px;
+}
+.tarjeta__datos ul{
+    padding-left: 20px;
+}
+.tarjeta__datos li{
+    margin-bottom: 4px;
+}
+
+/* Reseñas de los clientes */
+.opiniones{
+    text-align: center;
+    width: 80%;
+    margin: 5% auto;
+}
+.resena{
+    background-color: var(--fondo-resena);
+    border: 4px solid var(--borde-resena);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.resena p{
+    margin-bottom: 10px;
+}
+.resena__autor{
+    color: var(--color-dorado-oscuro);
+    font-style: normal;
+    font-size: 0.95rem;
+}
+
+/* cofresitos de las redes */
+.redes{
+    text-align: center;
+    margin: 70px auto;
+    width: 90%;
+}
+.redes__lista{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.cofre{
+    background-color: var(--fondo-tarjeta);
+    border: 2px solid var(--color-dorado);
+    border-radius: var(--radio);
+    padding: 25px;
+    width: 100%;
+    max-width: 300px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s, background-color 0.3s ease;
+}
+.cofre__icono{
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+.cofre__titulo{
+    color: var(--color-naranja);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.cofre__descripcion{
+    font-size: 1rem;
+    color: var(--color-gris);
+}
+.cofre__texto{
+    color: var(--color-dorado);
+    font-weight: bold;
+}
+.cofre:hover{
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 10px 25px var(--brillo-dorado);
+    background-color: var(--fondo-tarjeta-hover);
+    border-color: var(--color-verde);
+}
+.cofre:hover .cofre__titulo{
+    color: var(--color-verde);
+}
+
+/* formulario para las reservas de consolas*/
+.reserva{
+    width: 90%;
+    max-width: 40rem;
+    background-color: var(--fondo-morado);
+    border: 3px solid var(--color-dorado);
+    border-radius: var(--radio);
+    margin: 30px auto;
+    padding: var(--espacio-m);
+}
+/* se ilumina al llegar desde el menu (#reserva) */
+.reserva:target{
+    box-shadow: 0 0 25px var(--color-dorado);
+}
+.reserva p{
+    font-size: 1.2rem;
+}
+.reserva__form{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.reserva__campo{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.reserva__campo label{
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--color-dorado);
+}
+.reserva__campo:focus-within label{
+    color: var(--color-verde);
+}
+.reserva__campo input,
+.reserva__campo select,
+.reserva__campo textarea{
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid var(--borde-input);
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--fondo-input);
+    transition: border-color 0.3s ease;
+}
+.reserva__campo input:focus,
+.reserva__campo select:focus,
+.reserva__campo textarea:focus{
+    border-color: var(--color-verde);
+}
+/* selector de atributo: calendario y reloj en modo oscuro */
+input[type="date"], input[type="time"]{
+    color-scheme: dark;
+}
+.reserva__campo option{
+    background-color: #0e0e36;
+    color: #ffffff;
+}
+.reserva__boton{
+    background-color: var(--color-dorado);
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.reserva__boton:hover{
+    background-color: var(--color-verde);
+    transform: scale(1.02);
+}
+
+/* el pie de pagina */
+.pie{
+    text-align: end;
+    font-size: 0.8rem;
+}
+
+/* configuracion para que se ajuste a celular */
+@media (max-width: 480px){
+    .cabecera__titulo{
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    .menu{
+        font-size: 1.2rem;
+    }
+    .menu__lista{
+        padding-left: var(--espacio-s);
+    }
+    .menu__item{
+        margin-right: 0;
+    }
+    .seccion__titulo{
+        font-size: 1.8rem;
+    }
+    .seccion__intro{
+        font-size: 1.1rem;
+    }
+    .mapa{
+        margin: var(--espacio-s) 0;
+    }
+    .horario, .consolas{
+        font-size: 1.1rem;
+    }
+    .tabla{
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    .tabla th, .tabla td{
+        padding: 0.4rem;
+    }
+    .tabla__encabezado{
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+    .tabla__dias{
+        font-size: 1.1rem;
+    }
+    .galeria{
+        gap: 1rem;
+    }
+    .opiniones, .redes, .reserva{
+        width: 100%;
+    }
+    .resena{
+        font-size: 1.1rem;
+    }
+}
